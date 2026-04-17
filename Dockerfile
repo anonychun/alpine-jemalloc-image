@@ -5,7 +5,7 @@ RUN apk add --no-cache libstdc++
 FROM base AS build
 RUN apk add --no-cache alpine-sdk
 ARG JEMALLOC_VERSION=0
-RUN wget -O - https://github.com/facebook/jemalloc/releases/download/${JEMALLOC_VERSION}/jemalloc-${JEMALLOC_VERSION}.tar.bz2 | tar -xj && \
+RUN wget -O - https://github.com/jemalloc/jemalloc/releases/download/${JEMALLOC_VERSION}/jemalloc-${JEMALLOC_VERSION}.tar.bz2 | tar -xj && \
 	cd jemalloc-${JEMALLOC_VERSION} && \
 	./configure && \
 	make && \
